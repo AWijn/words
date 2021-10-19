@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS textfile
+(
+    id SERIAL PRIMARY KEY,
+    words TEXT NOT NULL
+);

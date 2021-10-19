@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  wordgames-db:
+    image: postgres:9.6.10-alpine
+    ports:
+      - "5403:5432"
+    environment:
+      POSTGRES_DB: wordgames
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: admin
+      PGDATA: /tmp
+    volumes:
+      - ./.docker_data/wordgames-db/data:/var/lib/postgresql/data
