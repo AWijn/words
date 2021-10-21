@@ -55,7 +55,7 @@ public class WordControllerTest {
 
     @Test
     public void testEmptyFileCode() throws IOException {
-        String input = IOUtils.toString(WordHandlerImpl.class.getResourceAsStream("/empty.txt"));
+        String input = IOUtils.toString(WordHandlerImpl.class.getResourceAsStream("/emptyfile.txt"));
         assertThat(post(input).code()).isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 
