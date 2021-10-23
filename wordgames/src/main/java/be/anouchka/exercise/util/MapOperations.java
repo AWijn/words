@@ -1,11 +1,8 @@
 package be.anouchka.exercise.util;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.ListIterator;
 import java.util.Map;
-import java.util.Set;
-import java.util.function.Function;
 
 import static java.util.Arrays.asList;
 
@@ -25,6 +22,11 @@ public class MapOperations {
             map.put(key, value);
         }
         return map;
+    }
+
+    public static <T> T get(Map<String, Object> map, String key)
+    {
+        return (T) map.get(key);
     }
 
 }

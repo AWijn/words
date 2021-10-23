@@ -2,6 +2,7 @@ package be.anouchka.exercise.adapter.outbound.jdbc.postgres;
 
 import be.anouchka.exercise.port.outbound.FileRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -17,11 +18,8 @@ import static be.anouchka.exercise.util.MapOperations.mapWith;
 @Slf4j
 public class PostgresFileRepository implements FileRepository {
 
-    private final NamedParameterJdbcTemplate jdbcTemplate;
-
-    public PostgresFileRepository(NamedParameterJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
+    @Autowired
+    private NamedParameterJdbcTemplate jdbcTemplate;
 
     private static final String INSERT_FILE = "INSERT INTO textfile(words)" + "VALUES(:words)";
 
